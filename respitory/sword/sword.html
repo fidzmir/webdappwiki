@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki Page</title>
+    <link rel="stylesheet" href="swordstyle.css">
+</head>
+<body>
+
+    <!-- Header Section with Image -->
+    <header>
+        <img src="C:/Users/ghost/demo_app_webd/gamelogo.png" style="width: 472px; height: 152px;" alt="Wiki Logo">
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="main-content" id="main-content">
+        <h2>SWORD LIST</h2>
+
+        <!-- Image Gallery -->
+        <div class="image-gallery">
+            <div class="image-item" data-attributes="<p>A powerful blade forged in ancient times.</p><p>Attack: 10</p><p>Defense: 2</p>">
+                <img src="C:/Users/ghost/demo_app_webd/assets/bluesword.png" alt="Blue Sword">
+                <p>BLUE SWORD</p>
+            </div>
+            <div class="image-item" data-title="Day Walker" data-attributes="A sword with mystical powers." data-damage="120" data-durability="90" data-weight="10">
+                <img src="C:/Users/ghost/demo_app_webd/assets/daywalker.png" alt="Day Walker">
+                <p>DAY WALKER</p>
+            </div>
+            <div class="image-item" data-title="Ice Sword" data-attributes="A sword crafted from the coldest ice." data-damage="170" data-durability="70" data-weight="15">
+                <img src="C:/Users/ghost/demo_app_webd/assets/icesword.png" alt="Ice Sword">
+                <p>ICE SWORD</p>
+            </div>
+            <div class="image-item" data-attributes="A sword with mystical powers.">
+                <img src="C:/Users/ghost/demo_app_webd/assets/lightningscimitar.png" alt="Lightning Scimitar">
+                <p>LIGHTNING SCIMITAR</p>
+            </div>
+            <div class="image-item" data-attributes="A sword with mystical powers.">
+                <img src="C:/Users/ghost/demo_app_webd/assets/machete.png" alt="Machete">
+                <p>MACHETE</p>
+            </div>
+            <div class="image-item" data-attributes="A sword with mystical powers.">
+                <img src="C:/Users/ghost/demo_app_webd/assets/pinksword.png" alt="Pink Sword">
+                <p>PINK SWORD</p>
+
+            </div>
+            <div class="image-item" data-attributes="A sword with mystical powers.">
+                <img src="C:/Users/ghost/demo_app_webd/assets/redmetalsword.png" alt="Red Metal Sword">
+                <p>RED METAL SWORD</p>
+            </div>
+            <div class="image-item" data-attributes="A sword with mystical powers.">
+                <img src="C:/Users/ghost/demo_app_webd/assets/redsword.png" alt="Red Sword">
+                <p>RED SWORD</p>
+            </div>
+            <div class="image-item" data-attributes="A sword with mystical powers.">
+                <img src="C:/Users/ghost/demo_app_webd/assets/sidesword.png" alt="Side Sword">
+                <p>SIDE SWORD</p>
+
+            </div>
+            <div class="image-item" data-attributes="A sword with mystical powers.">
+                <img src="C:/Users/ghost/demo_app_webd/assets/spear.png" alt="Spear">
+                <p>SPEAR</p>
+            </div>
+            <div class="image-item" data-attributes="A sword with mystical powers.">
+                <img src="C:/Users/ghost/demo_app_webd/assets/whip.png" alt="Whip">
+                <p>WHIP</p>
+                
+            </div>
+            <div class="image-item" data-attributes="A sword with mystical powers.">
+                <img src="C:/Users/ghost/demo_app_webd/assets/wolfsword.png" alt="Wolf Sword">
+                <p>WOLF SWORD</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-attributes"></p>
+        </div>
+    </div>
+
+   <!-- JavaScript goes here -->
+<script>
+    // Select the modal and close button
+    const modal = document.getElementById("modal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalAttributes = document.getElementById("modal-attributes");
+    const closeModal = document.getElementsByClassName("close")[0];
+
+    // Get all image items in the gallery
+    const imageItems = document.querySelectorAll(".image-item");
+
+    // Add click event to each image item
+    imageItems.forEach(item => {
+        item.addEventListener("click", () => {
+            const imageTitle = item.querySelector("p").textContent;
+            const imageAttributes = item.getAttribute("data-attributes");
+
+            modalTitle.textContent = imageTitle;
+            modalAttributes.innerHTML = imageAttributes; // Changed to innerHTML for multiple paragraphs
+
+            modal.style.display = "flex";
+        });
+    });
+
+    // Close modal functionality
+    closeModal.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
+</body>
+</html>
