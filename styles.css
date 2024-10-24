@@ -1,0 +1,199 @@
+@font-face {
+    font-family:'Daydream' ;
+    src: url('./fonts/dogicapixel.ttf');
+
+}
+
+/* General Styling */
+body {
+    font-family: 'Daydream'
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-image: url('background.png'); /* Background image for the entire body */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background image fixed on scroll */
+}
+
+/* Header Section */
+header {
+    text-align: center; /* Centers the logo */
+    padding: 20px;
+  
+}
+
+/* Content Wrapper: Holds Sidebar and Main Content */
+.content-wrapper {
+    display: flex;
+    margin: 20px;
+    position: center;
+    text-align: center;
+}
+
+/* Sidebar Section */
+.sidebar {
+    width: 300px; /* Width of the sidebar */
+    padding: 20px;
+    background-color: rgba(48, 0, 0, 0); /* Light background for the sidebar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Panel Box Section */
+.panel-box {
+    display: flex; /* Enables Flexbox */
+    flex-direction: column; /* Ensures the content stacks vertically */
+    justify-content: center; /* Vertically centers the content */
+    align-items: center; /* Horizontally centers the content */
+    color: white; /* Ensure text is readable */
+    padding: 20px; /* Increased padding for better spacing */
+    margin-bottom: 20px; /* Increased margin for better separation */
+    border-radius: 10px; /* Rounded corners */
+    position: relative; /* Required for pseudo-elements */
+    overflow: hidden; /* Prevent overflow of contents */
+    transition: transform 0.3s ease; /* Smooth transition effect */
+    box-shadow: 0 4px 20px rgba(148, 84, 0, 0.15); /* Shadow for depth */
+}
+
+/* Panel Box Hover Effect */
+.panel-box:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Optional: Add a dark overlay for better text contrast */
+.panel-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    border-radius: 10px; /* Match the panel's border radius */
+    z-index: 1; /* Place behind the content */
+}
+
+/* Panel Box Header Styling */
+.panel-box h3 {
+    font-family: 'Daydream';
+    margin-top: 0;
+    position: relative; /* Position relative to allow overlay to work */
+    z-index: 2; /* Place above the overlay */
+    font-size: 1.5rem; /* Increase heading size */
+    text-shadow: 1px 1px 2px rgb(17, 0, 0); /* Shadow for better visibility */
+    text-align: center; /* Center the header text */
+}
+
+/* Main Content Section */
+.main-content {
+    font-family: 'Daydream';
+    font-size: 1em;
+    flex: 1; /* Takes up the remaining space */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(204, 92, 0, 0.2); /* Subtle shadow */
+    position: center;
+    overflow-x: auto;
+    color:#ffffff 
+   
+}
+
+/* Style for Paragraphs in Panel Box */
+.panel-box p {
+    margin: 10px 0; /* Margin between paragraphs */
+    line-height: 1.5; /* Increased line height for readability */
+    text-align: center; /* Center the paragraph text */
+    z-index: 2; /* Place above the overlay */
+}
+
+/* Add colorful borders to panel boxes */
+.panel-box {
+    border: 5px solid transparent; /* Transparent border for hover effect */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.panel-box:hover {
+    border-color: #700000; /* Change border color on hover */
+}
+
+.maincontentimg {
+    width: 200px;
+    height: auto;
+    margin: 10px; /* Add spacing between images */
+    width: 200px;
+    height: auto;
+    background-image: url('assets/bgimage.jpg'); 
+    border: 5px solid #000; /* Add a black border */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    padding: 5px; /* Optional: Add padding inside the border */
+    color: inherit;
+}
+/* Horizontal Scroll Container Inside Main Content */
+.scroll-container {
+    display: flex; /* Align images in a row */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Disable vertical scrolling */
+    gap: 20px; /* Space between images */
+    white-space: nowrap; /* Prevent line break, ensuring images stay in a row */
+    padding: 20px 0; /* Padding for top and bottom */
+    scroll-behavior: smooth; /* Smooth horizontal scrolling */
+    max-width: 100%; /* Ensure it stays within the content area */
+    border: none; /* Avoid overflow border issues */
+}
+
+
+/* Styling for Images in Scroll Container */
+.scroll-container img {
+    width: 100%; /* Image takes up the full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    border: 5px solid #000; /* Add a black border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 5px;
+    transition: transform 0.3s ease; /* Add hover effect */
+}
+
+/* Optional: Add hover effect to scale up images */
+.scroll-container img:hover {
+    transform: scale(1.1); /* Slightly zoom in the image on hover */
+}
+
+/* Remove underline from all links */
+
+
+/* Additional specificity for your image names */
+.image-container a {
+    text-decoration: none !important; /* Ensure no underline */
+    color: inherit !important; /* Inherit color from parent */
+}
+
+/* Styling for Names Below Images */
+.image-name {
+    margin-top: 10px;
+    font-size: 1.5em; /* Adjust font size as needed */
+    font-family: 'Daydream'; /* Match font with your theme */
+    color: #ffffff; /* Choose a contrasting color for the text */
+    font-weight: bold; /* Make text bold */
+}
+
+.main-content a {
+    color: #ff4500; /* Bright orange color */
+    text-decoration: none; /* Remove default underline */
+    font-weight: bold;
+    padding-bottom: 2px;
+    transition: color 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.main-content a:hover {
+    color: #ffa500; /* Lighter orange on hover */
+    border-color: #ffa500; /* Change underline color on hover */
+    text-decoration: underline; /* Optional hover underline */
+}
+
+.main-content p {
+    margin-bottom: 20px; /* Adds space below the paragraph */
+    line-height: 1.6; /* Improves readability with better line spacing */
+    text-align: left;
+}
